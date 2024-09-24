@@ -1,4 +1,4 @@
-
+                
 document.addEventListener("DOMContentLoaded", () => {
     const balanceElement = document.getElementById("balance");
     const donationSection = document.getElementById("donationSection");
@@ -8,15 +8,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const historyList = document.getElementById("historyList");
     let totalBalance = 5000; // Initial balance
     let history = []; // To store donation history
-  
+
     // Toggle between Donation and History sections
     donationButton.addEventListener("click", () => {
+        // Set red background color when clicked
+        donationButton.classList.add("bg-red"); 
+        donationButton.classList.remove("bg-blue-500")
+        historyButton.classList.add("bg-blue-500");
+        historyButton.classList.remove("bg-gray-300");
         donationSection.classList.remove("hidden");
         historySection.classList.add("hidden");
         toggleActiveButton(donationButton, historyButton);
     });
-  
+    //   history addEventListener
     historyButton.addEventListener("click", () => {
+        historyButton.classList.remove("bg-blue-500")
+        historyButton.classList.remove("bg-gray-300")
+        historyButton.classList.remove("bg-gray-300")
+        donationButton.classList.add("bg-blue-500")
         donationSection.classList.add("hidden");
         historySection.classList.remove("hidden");
         toggleActiveButton(historyButton, donationButton);
@@ -32,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const donationAmount = parseFloat(donationInput.value);
   
             processDonation(donationAmount, currentDonationSpan);
-            donationInput.value = ""; // Clear the input field
+            donationInput.value = ""; 
         });
     });
   
@@ -55,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
         // Add to history
         const now = new Date();
-        const historyEntry = `Donated ${amount} BDT on ${now.toLocaleString()}`;
+        const historyEntry = `Donated ${amount} Taka is Donated , Bangladesh   ${now.toLocaleString()}`;
         history.push(historyEntry);
         updateHistoryList();
   
@@ -75,9 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Function to update the donation history list
     function updateHistoryList() {
-        historyList.innerHTML = ""; // Clear previous history
+        historyList.innerHTML = ""; 
         history.forEach(entry => {
             const li = document.createElement("li");
+            li.style.color = "blue"; 
+            li.style.padding = "20px"; 
+            li.style.border = "1px solid #C0C0C0"; 
+            li.style.fontFamily = "Arial, sans-serif"; 
             li.textContent = entry;
             historyList.appendChild(li);
         });

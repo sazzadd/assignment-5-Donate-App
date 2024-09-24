@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Donate Bangladesh</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
         <style>
          .active { background-color: #4f46e5; color: white; }
          .hidden { display: none; }
@@ -15,7 +16,7 @@
   left: 0;
   width: 100%;
   z-index: 999; 
-  background-color: #4f46e5;  
+  background-color: #fff;  
   opacity: 0.9;
   
   /* Adjust z-index if needed */
@@ -46,15 +47,15 @@
                                 alt="Coin" class="inline w-5"></span>
                     </div>
                 </nav>
+                <!-- donate and history button -->
+                <div class="flex gap-4 justify-center my-4">
+                    <button id="donationButton"
+                        class="active px-4 py-2 rounded-md bg-blue-500 text-white">Donation</button>
+                    <button id="historyButton"
+                        class="px-4 py-2 rounded-md bg-gray-300">History</button>
+                </div>
             </section>
 
-            <!-- donate and history button -->
-            <div class="flex gap-4 justify-center my-4">
-                <button id="donationButton"
-                    class="active px-4 py-2 rounded-md bg-blue-500 text-white">Donation</button>
-                <button id="historyButton"
-                    class="px-4 py-2 rounded-md bg-gray-300">History</button>
-            </div>
             <!-- Main Section -->
             <main class=" w-8/12 mx-auto p-6">
                 <!-- Donation Cards Section -->
@@ -69,9 +70,9 @@
                                     alt="Donation 1"
                                     class="w-full h-full object-cover rounded-md">
                             </div>
-                            <div class="pl-4">
+                            <div class="pl-2 mt-3">
                                 <div
-                                    class="bg-slate-300 rounded-md  px-4 py-2 inline-block"><span
+                                    class="bg-slate-300 rounded-md  px-4 py-2 inline-block"><span>🪙</span><span
                                         id="currentDonation">0</span> BDT</div>
                                 <h2 class="text-xl font-semibold my-2">Donate
                                     for Flood at Noakhali, Bangladesh
@@ -101,11 +102,12 @@
                                 <img src="./assets/feni.png" alt="Donation 2"
                                     class="w-full h-full object-cover rounded-md">
                             </div>
-                            <div class="pl-4">
+                            <div class="pl-2 mt-3">
                                 <div
-                                    class="bg-slate-300 rounded-md px-4 py-2 inline-block"><span
+                                    class="bg-slate-300 rounded-md px-4 py-2 inline-block"><span>🪙</span><span
                                         id="currentDonation">0</span> BDT</div>
-                                <h2 class="text-xl font-semibold my-2">Donate
+                                <h2 id="location2"
+                                    class="text-xl font-semibold my-2 location">Donate
                                     for Flood Relief in Feni,Bangladesh
                                 </h2>
                                 <p class="text-gray-600 mb-2"> The recent floods
@@ -134,11 +136,13 @@
                                     alt="Donation 1"
                                     class="w-full h-full object-cover rounded-md">
                             </div>
-                            <div class="pl-4 mt-2">
+                            <div class="pl-2 mt-3">
                                 <div
-                                    class="bg-slate-300 rounded-md   px-4 py-2 inline-block"><span
+                                    class="bg-slate-300 rounded-md   px-4 py-2 inline-block"><span>🪙</span><span
                                         id="currentDonation">0</span> BDT</div>
-                                <h2 class="text-xl font-semibold my-2">Aid for
+                                <h2 id="location3"
+                                    class="location text-xl font-semibold my-2">Aid
+                                    for
                                     Injured in the Quota Movement
                                 </h2>
                                 <p class="text-gray-600 mb-2"> The recent floods
@@ -174,14 +178,26 @@
             <!-- Donation Success Modal -->
             <div id="successModal"
                 class="hidden fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <p class="text-lg font-semibold">Donation Successful!</p>
-                    <button id="closeModal"
-                        class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md">Close</button>
+                <div class="bg-white p-6 rounded-lg shadow-lg ">
+                    <h1 class="text-4xl text-center font-semibold">congrats
+                        !</h1>
+
+                    <p class="text-center">🪙✅</p>
+                    <p class="text-2xl text-center">you have donated for
+                        humankind</p>
+                    <h3
+                        class="text-2xl text-center text-lime-600">successful</h3>
+                    <div class="flex items-center justify-center">
+
+                        <button id="closeModal"
+                            class="mt-4 bg-blue-500 items-center text-white py-2 px-4 rounded-md">Close</button>
+                    </div>
+
                 </div>
             </div>
 
             <!-- js  -->
             <script src="./js/app.js"></script>
+
         </body>
     </html>
